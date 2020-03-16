@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Creator from "./components/creator/creator";
+import ContextUser from "./context/creator";
+import CreateUser from "./context/creator";
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +37,10 @@ class App extends Component {
             </button>
           </div>
         </div>
-        <Creator />
+        <CreateUser.Provider value={this.state.language}>
+          {" "}
+          <Creator />
+        </CreateUser.Provider>
       </div>
     );
   }
